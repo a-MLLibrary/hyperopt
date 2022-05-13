@@ -301,7 +301,8 @@ class FMinIter:
 
                 self.trials.refresh()
                 if self.trials_save_file != "":
-                    pickler.dump(self.trials, open(self.trials_save_file, "wb"))
+                    with open(self.trials_save_file, "wb") as f:
+                        pickler.dump(self.trials, f)
                 if self.early_stop_fn is not None:
                     stop, kwargs = self.early_stop_fn(
                         self.trials, *self.early_stop_args
@@ -557,7 +558,8 @@ def fmin(
 
     if trials is None:
         if os.path.exists(trials_save_file):
-            trials = pickler.load(open(trials_save_file, "rb"))
+            with open(trials_save_file, "rb") as f:
+            trials = pickler.load(f)
         elif points_to_evaluate is None:
             trials = base.Trials()
         else:
