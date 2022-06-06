@@ -559,7 +559,7 @@ def fmin(
     if trials is None:
         if os.path.exists(trials_save_file):
             with open(trials_save_file, "rb") as f:
-            trials = pickler.load(f)
+                trials = pickler.load(f)
         elif points_to_evaluate is None:
             trials = base.Trials()
         else:
