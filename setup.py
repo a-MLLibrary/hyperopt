@@ -13,7 +13,6 @@ setuptools.setup(
     name="hyperopt",
     version=version,
     packages=setuptools.find_packages(include=["hyperopt*"]),
-    entry_points={"console_scripts": ["hyperopt-mongo-worker=hyperopt.mongoexp:main"]},
     url="https://hyperopt.github.io/hyperopt",
     author="James Bergstra",
     author_email="james.bergstra@gmail.com",
@@ -51,11 +50,8 @@ setuptools.setup(
         "py4j",
     ],
     extras_require={
-        "SparkTrials": "pyspark",
-        "MongoTrials": "pymongo",
-        "ATPE": ["lightgbm", "scikit-learn"],
-        "dev": ["black", "pre-commit", "nose", "pytest"],
+        "dev": ["black", "pre-commit", "pytest"],
     },
-    tests_require=["nose", "pytest"],
+    tests_require=["pytest"],
     zip_safe=False,
 )

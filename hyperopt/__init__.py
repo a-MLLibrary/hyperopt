@@ -31,11 +31,7 @@ from . import exceptions
 # -- Import built-in optimization algorithms
 from . import rand
 from . import tpe
-from . import atpe
 from . import mix
 from . import anneal
-
-# -- spark extension
-from .spark import SparkTrials
 
 __version__ = "0.2.7"

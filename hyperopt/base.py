@@ -29,13 +29,7 @@ import sys
 
 import numpy as np
 
-try:
-    import bson  # -- comes with pymongo
-    from bson.objectid import ObjectId
-
-    have_bson = True
-except ImportError:
-    have_bson = False
+have_bson = False
 
 from . import pyll
 from .pyll.stochastic import recursive_set_rng_kwarg
