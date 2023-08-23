@@ -47,7 +47,6 @@ setuptools.setup(
         "future",
         "tqdm",
         "cloudpickle",
-        "py4j",
     ],
     extras_require={
         "dev": ["black", "pre-commit", "pytest"],
